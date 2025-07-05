@@ -1,0 +1,33 @@
+🐢 1. Brute Force Approach (O(n²))
+🔍 Algorithm:
+Initialize maxSum = arr[0] (handle negative numbers).
+
+Loop i from 0 to n - 1
+
+Initialize currentSum = 0
+
+Loop j from i to n - 1
+
+Add arr[j] to currentSum
+
+Update maxSum = max(maxSum, currentSum)
+
+Return maxSum
+
+
+
+⚡ 2. Kadane’s Algorithm (Optimized O(n))
+🔍 Algorithm:
+Initialize:
+
+currentSum = arr[0]
+
+maxSum = arr[0]
+
+Loop i from 1 to n - 1
+
+currentSum = max(arr[i], currentSum + arr[i])
+
+maxSum = max(maxSum, currentSum)
+
+Return maxSum
