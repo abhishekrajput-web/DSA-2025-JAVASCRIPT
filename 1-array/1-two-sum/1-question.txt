@@ -1,0 +1,56 @@
+ TWO SUM – Problem Summary:
+Given an array arr and an integer target, return indices of two elements such that their sum equals target.
+Note: Each input has exactly one solution, and you can't use the same element twice.
+
+🧱 Brute Force Approach (Your Code ✅)
+📌 Algorithm Steps:
+Get the length of the array.
+
+If array is empty or invalid, return -1.
+
+Use two nested loops:
+
+Outer loop for index i from 0 to n - 1
+
+Inner loop for index j from i + 1 to n - 1
+
+Check if arr[i] + arr[j] == target.
+
+If condition matches, return [i, j].
+
+If no such pair is found, return -1.
+
+⏱ Time Complexity:
+O(n²) — two nested loops over the array.
+
+💾 Space Complexity:
+O(1) — no extra space used.
+
+🚀 Optimized Approach (Hash Map) (Your Code ✅)
+📌 Algorithm Steps:
+Get the array length. If empty, return -1.
+
+Create a new Map to store value: index pairs.
+
+Loop through the array using index i:
+
+Calculate complement = target - arr[i].
+
+If complement exists in the Map, return [map.get(complement), i].
+
+Otherwise, store arr[i] and its index in the Map.
+
+If no solution is found, return -1.
+
+⏱ Time Complexity:
+O(n) — single pass through the array.
+
+💾 Space Complexity:
+O(n) — storing elements in a Map.
+
+
+
+
+
+
+
