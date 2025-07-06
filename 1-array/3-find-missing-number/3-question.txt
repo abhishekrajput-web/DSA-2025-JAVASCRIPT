@@ -1,0 +1,67 @@
+You're given an array of distinct integers in the range 0 to n. One number is missing. Find that missing number.
+
+✅ Approach 1: Mathematical Formula (Sum Approach)
+📌 Concept
+Sum of first n natural numbers =
+
+Expected Sum
+=
+𝑛
+(
+𝑛
++
+1
+)
+2
+Expected Sum= 
+2
+n(n+1)
+​
+ 
+Subtract the actual sum of the array from this expected sum. The difference is the missing number.
+
+🧠 Time Complexity
+O(n)
+
+💾 Space Complexity
+O(1)
+
+✅ Algorithm
+Let n = array.length.
+
+Calculate expectedSum = n * (n + 1) / 2.
+
+Calculate actualSum = sum of all elements in array.
+
+Return expectedSum - actualSum.
+
+
+
+
+
+
+
+🧠 Approach 2: Bit Manipulation (XOR)
+📌 Concept
+XOR of a number with itself is 0: a ^ a = 0
+
+XOR of a number with 0 is the number: a ^ 0 = a
+
+XOR is commutative and associative.
+
+We XOR all numbers from 0 to n and also XOR all elements of the array. All duplicate pairs cancel out, leaving the missing number.
+
+🧠 Time Complexity
+O(n)
+
+💾 Space Complexity
+O(1)
+
+✅ Algorithm
+Initialize a variable xor = 0.
+
+XOR all numbers from 0 to n.
+
+XOR all elements in the array.
+
+The final xor result is the missing number.
