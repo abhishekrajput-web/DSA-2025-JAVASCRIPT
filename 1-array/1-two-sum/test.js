@@ -14,7 +14,6 @@ for(let i = 0; i < n; i++){
 
     map.set(arr[i], i);
 }
-
 return -1;
 
 }

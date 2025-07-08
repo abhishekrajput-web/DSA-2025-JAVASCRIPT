@@ -1,0 +1,108 @@
+✅ 1. Brute-force Approach (Nested Loops)
+🔧 Goal: Find the first duplicate by comparing every pair.
+📌 Algorithm:
+Start
+
+Input: an array arr of length n
+
+If n <= 0, return -1 (invalid input)
+
+Loop through the array using index i from 0 to n-1:
+
+Loop again using index j from i+1 to n-1:
+
+If arr[i] === arr[j], it means this value is a duplicate → return arr[i]
+
+If no duplicates found after all iterations, return -1
+
+End
+
+🔁 Time Complexity: O(n²)
+🧠 Space Complexity: O(1)
+✅ 2. Sorting and One-Pass Comparison
+🔧 Goal: Sort the array and check if any two consecutive elements are the same.
+📌 Algorithm:
+Start
+
+Input: array arr of length n
+
+If n <= 0, return -1
+
+Sort the array in ascending order using built-in sort
+
+Traverse the array from index 0 to n-2:
+
+If arr[i] === arr[i+1], return arr[i] (duplicate found)
+
+If no duplicate found, return -1
+
+End
+
+📝 Note: Sorting modifies the original array.
+🔁 Time Complexity: O(n log n)
+🧠 Space Complexity: O(1) (excluding sort internals)
+✅ 3. Using Set for Tracking
+🔧 Goal: Use a Set to keep track of seen numbers and detect a repeat.
+📌 Algorithm:
+Start
+
+Input: array arr of length n
+
+If n <= 0, return -1
+
+Create an empty Set called seen
+
+Loop through the array:
+
+For each element arr[i]:
+
+If arr[i] is already in seen, return arr[i] (duplicate found)
+
+Otherwise, add arr[i] to seen
+
+If no duplicates found, return -1
+
+End
+
+🔁 Time Complexity: O(n)
+🧠 Space Complexity: O(n)
+✅ 4. Floyd’s Tortoise and Hare (Cycle Detection Algorithm)
+🔧 Goal: Use cycle detection in a linked-list-style number path to find the duplicate.
+✅ Constraints:
+Array contains n + 1 elements, where each element is in the range 1 to n
+
+Only one duplicate exists but can appear multiple times
+
+📌 Algorithm:
+🧠 Phase 1: Detect intersection (find meeting point)
+Start
+
+Input: array arr of length n
+
+If n <= 0, return -1
+
+Initialize two pointers:
+
+slow = arr[0]
+
+fast = arr[0]
+
+Repeat:
+
+Move slow = arr[slow] (1 step)
+
+Move fast = arr[arr[fast]] (2 steps)
+
+Until slow === fast (they meet inside the cycle)
+
+🔁 Phase 2: Find entrance of the cycle (duplicate)
+Reset slow = arr[0]
+
+Loop:
+
+Move both slow = arr[slow] and fast = arr[fast] one step at a time
+
+When slow === fast, return slow (duplicate number found)
+
+🔁 Time Complexity: O(n)
+🧠 Space Complexity: O(1)
