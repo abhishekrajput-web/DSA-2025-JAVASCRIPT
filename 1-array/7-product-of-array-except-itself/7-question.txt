@@ -1,0 +1,183 @@
+ Problem Statement
+You're given an array of integers.
+
+You must return a new array output[] such that:
+
+Each element at index i is equal to the product of all elements of the input array except nums[i].
+
+Without using division.
+
+📌 Test Case Example
+Input:
+js
+Copy
+Edit
+nums = [1, 2, 3, 4]
+Output:
+js
+Copy
+Edit
+[24, 12, 8, 6]
+Why?
+Output[0] = 2×3×4 = 24
+
+Output[1] = 1×3×4 = 12
+
+Output[2] = 1×2×4 = 8
+
+Output[3] = 1×2×3 = 6
+
+⚠️ Naive Approach (Using Division)
+Take the total product of all elements.
+
+For each index, divide total product by nums[i].
+
+Example:
+total = 1 × 2 × 3 × 4 = 24
+
+result[i] = total / nums[i]
+
+❌ Problems with this approach:
+Fails when 0 is present (division by zero).
+
+Not allowed if problem restricts using division.
+
+Large numbers may exceed 2³² (overflow).
+
+🚫 Edge Case Failures
+Division approach fails with:
+
+Zeros in array → incorrect or undefined.
+
+Large product values → exceeds 2³² limit → integer overflow.
+
+✅ Optimal Approach Without Division
+Core Logic:
+For each index i,
+output[i] = product of all elements to the left of i × product of all elements to the right of i
+
+🔁 Step-by-Step Optimal Solution
+1️⃣ Create two arrays:
+left[]: product of all elements to the left of index i
+
+right[]: product of all elements to the right of index i
+
+2️⃣ Build left[] array (left to right):
+js
+Copy
+Edit
+left[0] = 1
+
+for i = 1 to n-1:
+    left[i] = left[i-1] * nums[i-1]
+Example:
+If nums = [3, 4, 6, 1, 2] →
+left = [1, 3, 12, 72, 72]
+
+3️⃣ Build right[] array (right to left):
+js
+Copy
+Edit
+right[n-1] = 1
+
+for i = n-2 to 0:
+    right[i] = right[i+1] * nums[i+1]
+Example:
+right = [48, 12, 2, 2, 1]
+
+4️⃣ Calculate Output Array:
+js
+Copy
+Edit
+output[i] = left[i] * right[i]
+Final Output:
+
+js
+Copy
+Edit
+[48, 36, 24, 12, 72]  // Depending on the example input
+⏱️ Time & Space Complexity
+Time Complexity: O(n)
+
+One pass for left[]
+
+One pass for right[]
+
+One pass for final output[]
+
+Space Complexity: O(n)
+
+Due to left[], right[], and output[]
+
+✅ Can be optimized to O(1) space (excluding output) by reusing the output[] array.
+
+🧠 Conceptual Insight
+Avoid multiplication overflow by computing partial products instead of a single total.
+
+Use prefix (left) and suffix (right) products to avoid division.
+
+Think of the solution as left product × right product for each index.
+
+📚 Why Interviewers Love This Question
+Tests logical thinking more than coding skills.
+
+Teaches you how to break problems into prefix and suffix patterns.
+
+Encourages space optimization and careful edge-case handling (like zeros, large numbers).
+
+✍️ Dry Run Summary
+For input nums = [3, 4, 6, 1, 2]:
+
+Left Products: [1, 3, 12, 72, 72]
+
+Right Products: [48, 12, 2, 2, 1]
+
+Final Output: [48, 36, 24, 12, 72]
+→ Each output[i] = left[i] * right[i]
+
+🔄 Final Code Concept (In JavaScript)
+js
+Copy
+Edit
+function productExceptSelf(nums) {
+    let n = nums.length;
+    let left = Array(n).fill(1);
+    let right = Array(n).fill(1);
+    let output = Array(n).fill(1);
+
+    for (let i = 1; i < n; i++) {
+        left[i] = left[i - 1] * nums[i - 1];
+    }
+
+    for (let i = n - 2; i >= 0; i--) {
+        right[i] = right[i + 1] * nums[i + 1];
+    }
+
+    for (let i = 0; i < n; i++) {
+        output[i] = left[i] * right[i];
+    }
+
+    return output;
+}
+🔚 Final Takeaway
+"This problem is less about code and more about thinking logically in prefix & suffix terms. It’s a classic that tests problem-solving skills without diving into complex syntax."
+
+Let me know if you want the space-optimized version or a visual diagram explanation.
+
+
+
+
+
+
+
+
+
+Ask ChatGPT
+
+
+
+Tools
+
+
+
+ChatGPT can make mista

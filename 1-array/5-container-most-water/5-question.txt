@@ -1,0 +1,70 @@
+🧱 1. Brute Force Approach – O(n²)
+🔍 Idea:
+Try every pair of lines and calculate the area of water they can hold. Keep track of the maximum.
+
+🧾 Step-by-Step Algorithm (in English):
+Initialize maxArea to 0 to store the maximum water area found so far.
+
+Loop through each element i from index 0 to n-1:
+
+Inside this loop, run another loop for index j from i+1 to n-1:
+
+Calculate the width of the container as j - i.
+
+Find the minimum height between height[i] and height[j] because water cannot be taller than the shorter wall.
+
+Calculate area as min(height[i], height[j]) × (j - i).
+
+If this area is greater than maxArea, update maxArea.
+
+After both loops finish, return maxArea.
+
+📦 Pros:
+Simple to understand
+
+Easy to implement
+
+❌ Cons:
+Inefficient for large arrays (Time complexity = O(n²))
+
+⚡ 2. Optimized Two-Pointer Approach – O(n)
+🔍 Idea:
+Instead of trying every pair, use two pointers (start and end) and move them inward while keeping track of max area.
+
+🧾 Step-by-Step Algorithm (in English):
+Initialize two pointers:
+
+left at the beginning of the array (0)
+
+right at the end of the array (n - 1)
+
+Initialize maxArea to 0.
+
+While left is less than right, repeat the following steps:
+
+Calculate the width as right - left.
+
+Find the height of water using the shorter line: min(height[left], height[right]).
+
+Calculate area as height × width.
+
+If this area is greater than maxArea, update maxArea.
+
+Move the pointer that has the shorter height:
+
+If height[left] < height[right], increment left by 1.
+
+Else, decrement right by 1.
+
+This is because a taller wall might help increase the area on the next step, while the shorter wall limits it.
+
+Once the two pointers meet, return maxArea.
+
+🤔 Why This Works?
+Moving the shorter line gives a chance to find a taller line that can increase the area.
+
+Moving the taller line won't help because the water is already limited by the shorter line.
+
+This smart narrowing reduces unnecessary comparisons and gives an efficient solution.
+
+🆚 Comparison Table

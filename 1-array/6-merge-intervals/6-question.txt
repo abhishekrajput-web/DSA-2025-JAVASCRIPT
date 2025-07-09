@@ -1,0 +1,88 @@
+✅ Problem Statement
+You are given an array of intervals where each interval is a pair [start, end]. Your task is to merge all overlapping intervals and return a new array of non-overlapping intervals that cover all the original intervals.
+
+🧠 Core Intuition
+Overlapping intervals share some common numbers.
+
+If two intervals [a, b] and [c, d] overlap (i.e., c <= b), they can be merged into [min(a, c), max(b, d)].
+
+Visualizing intervals on a number line can help you understand merging patterns better.
+
+🪜 Step-by-Step Efficient Algorithm
+Edge Case Check:
+
+If there's only one or zero intervals, return them as is.
+
+Sort the Intervals:
+
+Sort the array based on the start times of each interval:
+intervals.sort((a, b) => a[0] - b[0]);
+
+Initialize a Result Array:
+
+Create an empty mergedIntervals array.
+
+Push the first interval into it:
+mergedIntervals.push(intervals[0]);
+
+Traverse and Merge:
+
+Loop from the second interval to the end.
+
+For each currentInterval, compare it with the lastInterval in mergedIntervals.
+
+If currentInterval[0] <= lastInterval[1] → they overlap:
+
+Merge by updating:
+lastInterval[1] = Math.max(lastInterval[1], currentInterval[1]);
+
+Else → they don’t overlap:
+
+Push currentInterval to mergedIntervals.
+
+Return Result:
+
+The mergedIntervals array contains all the non-overlapping merged intervals.
+
+⏱️ Time and Space Complexity
+Time Complexity:
+O(n log n) → for sorting the intervals.
+
+Space Complexity:
+O(n) → in the worst case when no intervals overlap and all are added to the result.
+
+🔍 Example Dry Run
+Input:
+
+js
+Copy
+Edit
+[[1, 3], [2, 6], [8, 10], [15, 18]]
+Sorted:
+
+js
+Copy
+Edit
+[[1, 3], [2, 6], [8, 10], [15, 18]]
+Processing:
+
+Compare [1,3] & [2,6] → merge to [1,6]
+
+[8,10] doesn’t overlap with [1,6] → add as is
+
+[15,18] doesn’t overlap with [8,10] → add as is
+
+Result:
+
+js
+Copy
+Edit
+[[1, 6], [8, 10], [15, 18]]
+📌 Key Takeaway
+Sort by start time → ensures overlapping intervals are adjacent.
+
+Merge using bounds comparison.
+
+Drawing intervals on a number line is a great visual tool for understanding this.
+
+Let me know if you'd like the code with inline explanation or visual illustrations.
