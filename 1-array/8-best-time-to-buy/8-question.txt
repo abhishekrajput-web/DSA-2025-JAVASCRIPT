@@ -1,0 +1,124 @@
+Complete Deep Summary of the Video (Point-wise Structured)
+1. Problem Statement
+Objective: Maximize profit from buying and selling a stock once (single transaction).
+
+Input: Array of integers representing stock prices on consecutive days.
+
+Example: [7, 1, 5, 3, 6, 4] → Prices on Day 1, Day 2, etc.
+
+Constraints:
+
+Must buy before selling (no time travel).
+
+If no profit is possible (e.g., prices always decrease), return 0.
+
+2. Examples
+Example 1:
+
+Input: [7, 1, 5, 3, 6, 4]
+
+Buy at 1 (Day 2), sell at 6 (Day 5) → Profit = 5 (max).
+
+Example 2:
+
+Input: [4, 3, 1]
+
+Prices always drop → Profit = 0.
+
+3. Brute Force Approach (Inefficient)
+Method:
+
+For each day (i), check all future days (j > i) to calculate profit (prices[j] - prices[i]).
+
+Track the maximum profit found.
+
+Drawback:
+
+Time Complexity: O(n²) (nested loops).
+
+Fails for large arrays due to high time consumption.
+
+4. Optimal Solution (One-Pass Algorithm)
+Intuition: Track the minimum buying price and update max profit in a single pass.
+
+Steps:
+
+Initialize:
+
+min_price = prices[0] (buy price).
+
+max_profit = 0.
+
+Iterate through the array:
+
+If current price < min_price → Update min_price.
+
+Else, calculate current_profit = price - min_price.
+
+Update max_profit if current_profit > max_profit.
+
+Example Walkthrough:
+
+Array: [7, 1, 5, 3, 6, 4]
+
+Day 1: min_price=7, max_profit=0.
+
+Day 2: Update min_price=1.
+
+Day 3: Profit=4, max_profit=4.
+
+Day 5: Profit=5, max_profit=5 (final answer).
+
+Complexity:
+
+Time: O(n) (single pass).
+
+Space: O(1) (constant extra space).
+
+5. Key Insights
+Greedy Approach: Always seek the lowest buying price and highest selling price after buying.
+
+Dynamic Programming: Memoizes the best possible profit at each step.
+
+Edge Cases:
+
+All decreasing prices → max_profit=0.
+
+Single day → No transaction possible (profit=0).
+
+6. Code Implementation (Pseudocode)
+python
+def maxProfit(prices):
+    min_price = prices[0]
+    max_profit = 0
+    for price in prices:
+        if price < min_price:
+            min_price = price
+        else:
+            profit = price - min_price
+            max_profit = max(max_profit, profit)
+    return max_profit
+7. Variations & Advanced Problems
+Multiple Transactions: Allowed to buy/sell multiple times (e.g., LeetCode "Best Time to Buy and Sell Stock II").
+
+With Cooldown: Cannot buy immediately after selling.
+
+With Transaction Fees: Deduct fee for each trade.
+
+8. Practical Applications
+Stock Trading: Real-world algorithmic trading strategies.
+
+Financial Modeling: Analyzing historical data for trends.
+
+9. Conclusion
+Efficiency: Optimal solution avoids brute force by leveraging a single-pass greedy strategy.
+
+Learning Path: Start with this problem, then tackle advanced variants (e.g., multiple transactions).
+
+10. Additional Resources
+GitHub Code: Link provided in video description.
+
+Text Explanation: Available on ShriAlgorithms.com.
+
+Related Videos: Kadane’s Algorithm (for maximum subarray problems).
+
