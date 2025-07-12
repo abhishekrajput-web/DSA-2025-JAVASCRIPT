@@ -1,6 +1,5 @@
 
 
-
 function bestTimeToBuySellStocks(prices){
    let n = prices.length;
    if(n<=0){
