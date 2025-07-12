@@ -1,0 +1,73 @@
+📘 Algorithm: Trapping Rain Water Using Two Pointers
+🔹 Step 1: Understand the Problem
+You are given an array where each element represents the height of a bar in a histogram. Your goal is to calculate how much rainwater can be trapped between the bars after it rains.
+
+🔹 Step 2: Define Two Pointers
+Start with two pointers:
+
+One at the beginning of the array (left).
+
+One at the end of the array (right).
+
+🔹 Step 3: Initialize Tracking Variables
+Create two variables: leftMax and rightMax to track the maximum height seen so far from the left and the right sides.
+
+Also, initialize a variable totalWater to store the total amount of water trapped.
+
+🔹 Step 4: Loop While Left is Less Than Right
+Use a while loop that runs as long as left < right.
+
+🔹 Step 5: Update LeftMax and RightMax
+At each step:
+
+Update leftMax as the maximum of current leftMax and height[left].
+
+Update rightMax as the maximum of current rightMax and height[right].
+
+🔹 Step 6: Decide Which Side to Process
+Compare leftMax and rightMax.
+
+✅ Case 1: leftMax < rightMax
+This means the left side is bounded by a smaller height, so water can only be trapped based on leftMax.
+
+The water trapped at position left is:
+
+css
+Copy
+Edit
+leftMax - height[left]
+Add this to totalWater.
+
+Move left pointer one step to the right (left++).
+
+✅ Case 2: rightMax <= leftMax
+This means the right side is the limiting factor.
+
+The water trapped at position right is:
+
+css
+Copy
+Edit
+rightMax - height[right]
+Add this to totalWater.
+
+Move right pointer one step to the left (right--).
+
+🔹 Step 7: Loop Ends When Left Meets Right
+The loop stops when left and right pointers meet, meaning you've checked all possible trapped water.
+
+🔹 Step 8: Return the Result
+After the loop ends, totalWater contains the total trapped rainwater.
+
+Return this value.
+
+🧠 How to Remember for Interviews
+Think of two walls from both ends moving inward.
+
+Water is trapped based on the shorter wall between left and right.
+
+Always update max heights from both ends.
+
+Process the side with the smaller max, because that side limits how much water can be held at that point.
+
+Efficient because it avoids extra space — only tracks the current max height from both ends.
