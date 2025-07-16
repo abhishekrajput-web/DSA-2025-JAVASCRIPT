@@ -5,7 +5,6 @@
             nums[end] = temp;
     }
     
-    
     function sortArray(nums){
         let n = nums.length;
 
