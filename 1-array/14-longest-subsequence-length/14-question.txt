@@ -1,0 +1,105 @@
+Given an integer array nums, return the length of the longest strictly increasing subsequence.
+
+ 
+
+Example 1:
+
+Input: nums = [10,9,2,5,3,7,101,18]
+Output: 4
+Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4.
+Example 2:
+
+Input: nums = [0,1,0,3,2,3]
+Output: 4
+Example 3:
+
+Input: nums = [7,7,7,7,7,7,7]
+Output: 1
+ 
+
+
+
+Algorithm
+ Find the length of the longest subsequence of consecutive integers (regardless of order) in an array.
+
+Example:
+Input: [100, 4, 200, 1, 3, 2]
+Output: 4
+(Explanation: The sequence [1, 2, 3, 4] is the longest consecutive one.)
+
+✅ Optimized Algorithm (Using HashMap/Set)
+Step 1: Handle Edge Case
+If the input array is empty, return 0 immediately — there’s no sequence possible.
+
+Step 2: Create a HashMap (or Set)
+Use a Map or Set to store each number in the array.
+
+The purpose is to allow O(1) time complexity for checking if a number exists.
+
+Optionally, you can mark each number as visited or not (for Map-based solutions).
+
+Step 3: Iterate through Each Number in the Array
+For each number:
+
+If it is already marked as visited, skip it. We’ve already processed it in a previous sequence.
+
+Otherwise, mark it as visited.
+
+Initialize a currentLength counter to 1, because the number itself counts as a part of the sequence.
+
+Step 4: Expand the Sequence to the Right (Forward)
+Set a variable nextNum = current number + 1
+
+While nextNum exists in the map and is unvisited:
+
+Mark nextNum as visited
+
+Increase the currentLength by 1
+
+Increment nextNum by 1 (move forward in the sequence)
+
+Step 5: Expand the Sequence to the Left (Backward)
+Set a variable prevNum = current number - 1
+
+While prevNum exists in the map and is unvisited:
+
+Mark prevNum as visited
+
+Increase the currentLength by 1
+
+Decrement prevNum by 1 (move backward in the sequence)
+
+Step 6: Track the Longest Sequence
+After finishing the expansion for the current number:
+
+Compare currentLength with longestLength (initialized as 0)
+
+Update longestLength if currentLength is greater
+
+Step 7: Return the Result
+Once all numbers are processed, return the final longestLength as the result.
+
+✅ Time & Space Complexity:
+Time Complexity: O(n)
+Each number is processed at most once, thanks to the visited check.
+
+Space Complexity: O(n)
+A map or set is used to store the numbers.
+
+✅ Summary of Steps:
+Handle empty input
+
+Store all numbers in a map/set
+
+For each number:
+
+Skip if already visited
+
+Expand forward and backward to find the full consecutive sequence
+
+Mark all visited during expansion
+
+Track the maximum length found
+
+Return the maximum length
+
