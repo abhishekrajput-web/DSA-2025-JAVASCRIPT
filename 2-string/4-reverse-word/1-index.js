@@ -23,7 +23,6 @@ for(let i = 0; i < n; i++){
 }
 
 
-
 let left = 0;
 let right = 0;
 
