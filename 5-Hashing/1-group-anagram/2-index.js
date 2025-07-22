@@ -1,5 +1,3 @@
-
-
 function arrayConvert(str){
 let arr = [];
 for(let i = 0; i < str.length; i++){
@@ -8,7 +6,6 @@ for(let i = 0; i < str.length; i++){
 return arr;
 }
 
-
 function stringConvert(arr){
     let result = "";
     for(let i = 0; i < arr.length; i++){
@@ -16,7 +13,6 @@ function stringConvert(arr){
     }
     return result;
 }
-
 
 function groupAnagram(arr){
     let n = arr.length;
@@ -36,7 +32,6 @@ function groupAnagram(arr){
         }
 
         map.get(sortredString).push(str);
-
     }
 
     // return Array.from(map.values());
@@ -45,7 +40,6 @@ function groupAnagram(arr){
     for(let [key, value] of map){
         result.push([key,value]);
     }
-
     return result;
 
 }
@@ -53,3 +47,4 @@ function groupAnagram(arr){
 
 const strs = ["eat","tea","tan","ate","nat","bat"];
 console.log(groupAnagram(strs));
+
