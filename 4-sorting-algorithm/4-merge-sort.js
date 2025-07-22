@@ -41,3 +41,25 @@ function mergeSort(arr, start, end) {
 
 const arr = [38, 27, 43, 10];
 console.log(mergeSort(arr, 0, arr.length - 1));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
