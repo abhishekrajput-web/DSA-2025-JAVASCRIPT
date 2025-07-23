@@ -1,7 +1,6 @@
 
 // THREE SUM
 
-
 function threeSum(arr){
 const n = arr.length;
 if(arr===null || n < 3){
@@ -11,7 +10,6 @@ if(arr===null || n < 3){
 const result = [];
 
 arr.sort((a,b)=> a - b);
-
 
 for(let i = 0; i < n - 2; i++){
     if(i>0 && arr[i] === arr[i-1]){
@@ -34,7 +32,6 @@ for(let i = 0; i < n - 2; i++){
         left++;
         right--;
        } 
-
        else if(sum<0){
         left++;
        }
