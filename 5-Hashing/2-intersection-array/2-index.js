@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 function intersectionArray (nums1, nums2) {
 if(!nums1.length || !nums2.length){
     return [];
@@ -13,11 +6,9 @@ if(!nums1.length || !nums2.length){
 const map = {};
 const result = [];
 
-
 for(let num of nums1){
     map[num] = (map[num] || 0) + 1;
 }
-
 
 for(let num of nums2){
     if(map[num]>0){
