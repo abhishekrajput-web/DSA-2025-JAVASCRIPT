@@ -7,8 +7,6 @@ class Tree{
 }
 
 
-
-
 function invert(root){
     if(root === null){
         return null;

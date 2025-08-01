@@ -29,9 +29,7 @@ function lca(root, p, q){
     else {
         return rightLca;
     }
-
 }
-
 
 let root = new Tree(1);
 root.left = new Tree(2);
