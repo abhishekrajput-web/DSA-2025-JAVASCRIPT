@@ -1,0 +1,109 @@
+Arrays: start on 4/7/24 ------- complete on 22/07/2024
+Find the maximum and minimum element in an array.  4/7/24
+Reverse the array. 5/7/24
+Find the "Kth" max and min element of an array. 6/7/24
+Sort an array of 0s, 1s, and 2s without using extra space or sorting algorithms. 7/7/24
+Move all negative numbers to the beginning and positive to the end with constant extra space.8/7/24
+Find the Union and Intersection of the two sorted arrays.8/7/24 -  9/7/24
+Write a program to cyclically rotate an array by one.12/07/24
+Find the Largest sum contiguous subarray (Kadane’s Algorithm).17/07/24
+Minimize the maximum difference between heights [V.IMP].18/07/24
+Find the "Kth" smallest element in an unsorted array.
+Given an array of size n and a number k, find all elements that appear more than "n/k" times.
+Maximum profit by buying and selling a share at most twice.21/07/24
+Find whether an array is a subset of another array.20/07/24
+Find the Triplet that sum to a given value.19/07/24
+Trapping Rainwater problem. 20/7/24 - google, amazon 
+
+
+Strings:start on 22/7/24 ------- complete on 28/07/24
+Reverse a string. 22/7/24
+Check whether a string is a palindrome.22/7/24
+Find the duplicate characters in a string.23/7/24
+Why strings are immutable in Java?
+Write a code to check whether one string is a rotation of another.24/07/24
+check whether a string is a valid shuffle of two strings or not.25/07/24
+Count and say problem.26/07/24
+Write a program to find the longest substring without repeating characters.26/07/24
+Find the longest common subsequence.28/07/24
+Write a program to remove duplicates from a string.27/07/24
+two string are anagram 27/07/24
+
+
+Linked Lists:start on 28/7/24 ------- complete on 04/07/24
+Write a program to reverse a linked list.31/07/24
+Detect a loop in a linked list.1/08/24
+Find the starting point of the loop in a linked list.1/08/24
+Find the middle of a linked list.1/08/24
+Remove duplicates from a sorted linked list.1/08/24
+Remove duplicates from an unsorted linked list.4/08/24
+Add two numbers represented by linked lists.3/08/24
+Find the intersection point of two linked lists.2/08/24
+Write a program to merge two sorted linked lists.1/08/24
+Clone a linked list with random pointers.4/08/24
+
+
+Stacks and Queues: start on 05/08/24 ------- complete on 11/08/24
+Implement a stack using an array.05/08/24
+Implement a queue using an array.06/08/24
+Implement a stack using a linked list.09/08/24
+Implement a queue using a linked list.09/08/24
+Implement two stacks in an array.09/08/24
+Find the maximum element in a stack.11/09/24
+Implement a queue using two stacks.11/09/24
+Sort a stack.10/09/24
+Find the next greater element for each element of the array.10/08/24
+Implement an LRU cache.11/09/24
+
+
+Trees: start on 13/08/24 ------- complete on /25/08/24
+Inorder, Preorder, Postorder traversal of a binary tree.13/08/24
+Level order traversal of a binary tree.13/08/24
+Height of a binary tree.13/08/24 - 14/08/24
+Check if a binary tree is balanced.25/08/24
+Find the diameter of a binary tree.14/08/24
+Find the lowest common ancestor in a binary tree.24/08/24
+Convert a binary tree to a DLL.24/08/24
+Check if a binary tree is a mirror of itself.25/08/24
+Print all nodes at distance k from a given node.24/08/24 - 25/08/24
+Print all root-to-leaf paths.25/08/24
+
+
+Graphs:
+Implement BFS and DFS.  
+Detect a cycle in a graph.
+Find the shortest path in an unweighted graph.
+Find the shortest path in a weighted graph (Dijkstra’s algorithm).
+Check if a graph is bipartite.
+Find the connected components in an undirected graph.
+Topological sorting of a directed acyclic graph.
+Find the mother vertex in a graph.
+Check if there is a path between two nodes in a graph.
+Find the minimum spanning tree (Prim’s and Kruskal’s algorithms).
+
+
+Hashing:
+Implement a hash table.
+Find the number of pairs with a given sum in an array.
+Check if a given array contains duplicate elements within k distance from each other.
+Find the subarray with a sum equal to 0.
+Count distinct elements in every window of size k.
+Find the length of the largest subarray with 0 sum.
+Check if two arrays are equal or not.
+Find all pairs in an array with a given difference.
+Find the largest subarray with an equal number of 0s and 1s.
+Find the longest consecutive subsequence.
+
+
+Miscellaneous:
+Find the majority element.
+Find the peak element.
+Merge intervals.
+Largest rectangular area in a histogram.
+Find the longest increasing subsequence.
+Find the maximum product subarray.
+Find the minimum number of platforms required for a railway station.
+Activity selection problem.
+Job sequencing problem.
+Find the minimum number of coins for a given amount.
+Practicing these questions will give you a strong foundation in the key data structures and algorithms, and will prepare you for technical interviews at service-based companies.
