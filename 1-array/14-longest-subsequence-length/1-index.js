@@ -139,8 +139,6 @@ function longestLengthSubsequence(nums){
             map.set(prevNum, true);
             prevNum = prevNum - 1;
         }
-
-
         longestConsecutiveLength = Math.max(longestConsecutiveLength, currentLength);
 
     }
